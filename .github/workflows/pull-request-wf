@@ -1,7 +1,9 @@
 name: Pull Request Workflow
 run-name: Run Pull Request Workflow
 on:
-  pull_request
+  pull_request:
+    branches:
+      - master
 
 jobs:
   name: Run-Pull-Request-Workflow
