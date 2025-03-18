@@ -16,7 +16,8 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_PAT }}
 
       - name: Add Comment
-        run: gh issue comment "$ISSUE" --body "Thank you for opening this issue!"
+        run: gh issue comment "$ISSUE" --repo "$GITHUB_REPOSITORY" --body "Thank you for opening this issue!"
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
           ISSUE: ${{ github.event.issue.number }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
