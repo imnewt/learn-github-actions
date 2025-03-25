@@ -17,3 +17,10 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_PAT }}
           ISSUE: ${{ github.event.issue.number }}
           GITHUB_REPOSITORY: ${{ github.repository }}
+
+      - name: Add Label
+        run: gh issue edit "$ISSUE" --repo "$GITHUB_REPOSITORY" --add-label "help wanted"
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+          ISSUE: ${{ github.event.issue.number }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
