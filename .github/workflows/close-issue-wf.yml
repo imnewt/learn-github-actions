@@ -1,4 +1,5 @@
 name: Comment when issue closed
+run-name: Adding comment on issue ${{ github.event.issue.number }} closed
 on:
   issues:
     types:
